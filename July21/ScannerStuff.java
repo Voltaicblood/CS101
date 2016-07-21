@@ -8,7 +8,7 @@ public class ScannerStuff
     String token = in.next();
     int i = in.nextInt();
     String line = in.nextLine(); //skip the rest of this input line
-    line = in.nextLine();//gets an entire line
+    line = in.nextLine();//gets an entire line, because we already skipped to the beginning of it
     double d = in.nextDouble();
     
   
