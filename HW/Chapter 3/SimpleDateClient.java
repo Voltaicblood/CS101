@@ -1,5 +1,6 @@
 /* A client program to display SimpleDate object values
    Anderson, Franceschi
+   Jacob Austin
 */
 
 import java.awt.*;
