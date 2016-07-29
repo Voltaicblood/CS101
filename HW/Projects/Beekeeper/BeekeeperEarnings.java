@@ -108,10 +108,10 @@ dollar                        Decimal format using dollarPattern.
       DecimalFormat dollar = new DecimalFormat(dollarPattern);
       
       JOptionPane.showMessageDialog(null, "Income from selling cases of honey jars is: " + dollar.format(caseIncome) +
-                                          "/r Income from selling honey combs is: " + dollar.format(combIncome) +
-                                          "/r Income from selling raw honey is: " + dollar.format(rawIncome) +
-                                          "/r Income from renting out hives is: " + dollar.format(rentIncome)+
-                                          "/r Total income from all sources is: " + dollar.format(totalIncome)); 
+                                          "\r\nIncome from selling honey combs is: " + dollar.format(combIncome) +
+                                          "\r\nIncome from selling raw honey is: " + dollar.format(rawIncome) +
+                                          "\r\nIncome from renting out hives is: " + dollar.format(rentIncome)+
+                                          "\r\nTotal income from all sources is: " + dollar.format(totalIncome)); 
       //JOptionPane.showMessageDialog(null, "Income from selling cases of honey jars is: " + dollar.format(caseIncome));
       //JOptionPane.showMessageDialog(null, "Income from selling honey combs is: " + dollar.format(combIncome));
       //JOptionPane.showMessageDialog(null, "Income from selling raw honey is: " + dollar.format(rawIncome));
