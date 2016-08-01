@@ -64,7 +64,7 @@ COST_OF_RAW                   Cost in cents of 1 lb of raw honey
 COST_OF_RENT                  Cost in cents of renting a hive for 1 week
 JARS_IN_CASE                  Amount of jars in a case
 jarSold                       Amount of jars sold
-jarSoldNum                    Amount of jars sold in integer format
+jarSoldNum                    Amount of jars sold in double format
 caseSold                      Amount of cases sold
 combSold                      Amount of combs in lbs sold
 rawSold                       Amount of raw honey in lbs sold
