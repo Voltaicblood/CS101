@@ -88,14 +88,18 @@ dollar                        Decimal format using dollarPattern.
       
       final double JARS_IN_CASE = 24;
       
-      String jarSold = JOptionPane.showInputDialog(null, "Input number of honey jars sold:");
+      String jarSold = JOptionPane.showInputDialog(null, "Input number of honey "
+                                                         + "jars sold:");
       double jarSoldNum = Double.parseDouble(jarSold);
       double caseSold = jarSoldNum / JARS_IN_CASE;
       caseSold = Math.rint(caseSold);
       
-      String combSold = JOptionPane.showInputDialog(null, "Input in pounds the amount of honey combs sold:");
-      String rawSold = JOptionPane.showInputDialog(null, "Input in pounds the amount of raw honey sold:");
-      String rentSold = JOptionPane.showInputDialog(null, "Input how many hives were rented out for a week:");
+      String combSold = JOptionPane.showInputDialog(null, "Input in pounds the amount "
+                                                          + "of honey combs sold:");
+      String rawSold = JOptionPane.showInputDialog(null, "Input in pounds the amount "
+                                                          + "of raw honey sold:");
+      String rentSold = JOptionPane.showInputDialog(null, "Input how many hives were "
+                                                          + "rented out for a week:");
                      
       double caseIncome = caseSold * COST_OF_CASE;
       double combIncome = Double.parseDouble(combSold) * COST_OF_COMB;
@@ -107,17 +111,18 @@ dollar                        Decimal format using dollarPattern.
       String dollarPattern = "$#,##0.00";
       DecimalFormat dollar = new DecimalFormat(dollarPattern);
       
-      JOptionPane.showMessageDialog(null, "Income from selling cases of honey jars is: " + dollar.format(caseIncome) +
-                                          "\r\nIncome from selling honey combs is: " + dollar.format(combIncome) +
-                                          "\r\nIncome from selling raw honey is: " + dollar.format(rawIncome) +
-                                          "\r\nIncome from renting out hives is: " + dollar.format(rentIncome)+
-                                          "\r\nTotal income from all sources is: " + dollar.format(totalIncome)); 
-      //JOptionPane.showMessageDialog(null, "Income from selling cases of honey jars is: " + dollar.format(caseIncome));
-      //JOptionPane.showMessageDialog(null, "Income from selling honey combs is: " + dollar.format(combIncome));
-      //JOptionPane.showMessageDialog(null, "Income from selling raw honey is: " + dollar.format(rawIncome));
-      //JOptionPane.showMessageDialog(null, "Income from renting out hives is: " + dollar.format(rentIncome));
-      //JOptionPane.showMessageDialog(null, "Total income from all sources is: " + dollar.format(totalIncome));
-     
+      JOptionPane.showMessageDialog(null, 
+                                      "Income from selling cases of honey jars is: " + 
+                                      dollar.format(caseIncome) +
+                                      "\r\nIncome from selling honey combs is: " + 
+                                      dollar.format(combIncome) +
+                                      "\r\nIncome from selling raw honey is: " + 
+                                      dollar.format(rawIncome) +
+                                      "\r\nIncome from renting out hives is: " + 
+                                      dollar.format(rentIncome)+
+                                      "\r\nTotal income from all sources is: " + 
+                                      dollar.format(totalIncome)); 
+
    }//main method end
 
 }//BeekeeperEarnings class end
