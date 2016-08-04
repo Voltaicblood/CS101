@@ -37,22 +37,34 @@ args                          parameter of main
   {
     Scanner rawInput = new Scanner(System.in);
     int totalTokens = checkTokens(rawInput);
-    System.out.println(totalTokens);
+    
     
   
   }//main method end
   
   public static int checkTokens(Scanner rawInput)
   {
+  
     int tokens = 0;
     if (rawInput.hasNext() == true)
-       tokens = tokens + 1;
+    {
+       tokens++;
+       rawInput.next();
+    }
     if (rawInput.hasNext() == true)
-       tokens = tokens + 1;
+    {
+       tokens++;
+       rawInput.next();
+    }
     if (rawInput.hasNext() == true)
-       tokens = tokens + 1;
+    {
+       tokens++;
+       rawInput.next();
+    }
     if (rawInput.hasNext() == true)
-       tokens = tokens + 1;
+    {
+       tokens++;
+    }
     return tokens;
   }//checkTokens method end
   
