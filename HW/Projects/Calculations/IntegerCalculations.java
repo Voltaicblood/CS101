@@ -399,10 +399,13 @@ output                         integer of the output of (operand1 operator opera
        else
        {
          output = operand1 % operand2;
-         System.out.println("The remainder after dividing "+ operand1 + " by " 
-                               + operand2 " is " + output);
+         System.out.println("The remainder after dividing " + operand1 + " by " 
+                               + operand2 + " is " + output);
        }
      }
+     else
+       System.out.println("The operator inputted is not a valid operator.");
+
      
    }//calculate method end
    
