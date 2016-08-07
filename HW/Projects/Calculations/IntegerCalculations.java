@@ -343,6 +343,8 @@ calculate(operand1, operand2, operator)
                by zero is not allowed
     else
       output <-- the remainder of operand1 divided by operand2 is output
+  else
+    print the operator inputted is not a valid operator
 */
 
 /*
