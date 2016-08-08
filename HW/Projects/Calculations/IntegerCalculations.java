@@ -29,7 +29,7 @@ main(args)
   call checkIntegers using inputTwo
   operand1 <-- integer value based on calling findOperand1
   operand2 <-- integer value based on calling findOperand2
-  operator <-- character value based on calling findOperator
+  operator <-- character value based on calling findOperato4r
   call calculate using operand1, operand2, and operator                
 */
 

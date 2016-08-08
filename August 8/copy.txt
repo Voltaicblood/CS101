@@ -1,0 +1,6 @@
+Input complete
+The number of values are: 7
+The sum of values is: 30
+The average of values is: 4
+The maximum value is: 8
+The minimum value is: 1
