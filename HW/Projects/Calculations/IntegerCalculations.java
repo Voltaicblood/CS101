@@ -308,7 +308,7 @@ operator                      char value based on operator inputted
          if (input.hasNextInt() == false)
             operator = input.next().charAt(0);
          else
-         {
+         {z
             input.next();
             operator = input.next().charAt(0);
          }
