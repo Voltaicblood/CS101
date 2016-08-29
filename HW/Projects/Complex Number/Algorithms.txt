@@ -1,0 +1,60 @@
+Algorithms
+
+ComplexNumber(real, imaginary)
+    setReal(real)
+    setImaginary(imaginary)
+    count++
+	
+ComplexNumber()
+    this(DEFAULT_REAL, DEFAULT_IMAGINARY)
+	
+ComplexNumber(real)
+    setReal(real)
+    setImaginary(0)
+    count++
+	
+ComplexNumber(value)
+    setReal(value.getReal())
+    setImaginary(value.getImaginary())
+    count++
+
+setReal(double real)
+    this.real <- real
+
+  
+setImaginary(double imaginary)
+    this.imaginary <- imaginary
+	
+add(number)
+    double newReal <- getReal() + number.getReal()
+    double newImaginary <- getImaginary() + number.getImaginary()
+    ComplexNumber sum <- new ComplexNumber(newReal, newImaginary)
+    return sum
+	
+subtract(number)
+    double newReal <- getReal() - number.getReal()
+    double newImaginary <- getImaginary() - number.getImaginary()
+    ComplexNumber difference <- new ComplexNumber(newReal, newImaginary)
+    return difference
+	
+multiply(ComplexNumber number)
+    double newReal <- getReal() * number.getReal()
+    double newImaginary <- (getReal() * number.getImaginary()) + (number.getReal() * getImaginary())
+    newReal <- newReal - (getImaginary() * number.getImaginary());
+    ComplexNumber difference <- new ComplexNumber(newReal, newImaginary)
+    return difference
+	
+isZero()
+    if getReal() equals 0.0 AND getImaginary() equals 0.0 is true then
+      return true
+    return false
+	
+toString()
+    return getReal() + " + " + getImaginary() + "i"
+	
+valueOf(String x)
+    Scanner in <- new Scanner(x).useDelimiter("[^0-9.-]+")
+    double realPart <- in.nextDouble()
+    double imaginaryPart <- in.nextDouble()
+    ComplexNumber out <- new ComplexNumber(realPart, imaginaryPart)
+    return out
