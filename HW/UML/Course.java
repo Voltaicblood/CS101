@@ -7,6 +7,19 @@
   Organization: CS101-03
 */
 
+/**
+* Data Table
+*
+* Variable Usage
+* -------- -----
+* courseName String data for course name
+* courseNumber integer data for the course number
+* MAX_STUDENTS constant integer, max number of students in course
+* numberOfStudents number of students in course
+* building String data for building name
+* roomNumber integer data for room number
+*/
+
 public class Course
 {
   private String courseName;

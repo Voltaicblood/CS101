@@ -25,7 +25,8 @@ ____________________          _________________________________________
 number                        inputted ComplexNumber value to be added
 newReal                       double value that represents the real after addition
 newImaginary                  double value that represents the imaginary after addition                    
-sum                           ComplexNumber that represents the new ComplexNumber after addition
+sum                           ComplexNumber that represents the new ComplexNumber
+                                after addition
 
                   Method subtract
 Variable or Constant          Purpose
@@ -33,7 +34,8 @@ ____________________          _________________________________________
 number                        inputted ComplexNumber value to be subtracted
 newReal                       double value that represents the real after subtraction
 newImaginary                  double value that represents the imaginary after subtraction                   
-sum                           ComplexNumber that represents the new ComplexNumber after subtraction                  
+sum                           ComplexNumber that represents the new ComplexNumber 
+                                after subtraction                  
 
                   Method multiply
 Variable or Constant          Purpose
@@ -41,13 +43,16 @@ ____________________          _________________________________________
 number                        inputted ComplexNumber value to be multiplied
 newReal                       double value that represents the real after multiplication
 newImaginary                  double value that represents the imaginary after multiplication                   
-sum                           ComplexNumber that represents the new ComplexNumber after multiplication
+sum                           ComplexNumber that represents the new ComplexNumber 
+                                after multiplication
 
                   Method valueOf
 Variable or Constant          Purpose
 ____________________          _________________________________________
 x                             inputted String value that is to be converted to a ComplexNumber
 in                            Scanner that uses the x value
-realPart                      double value that represents the real (first) part of the string
-imaginaryPart                 double value that represents the imaginary (second) part of the string
+realPart                      double value that represents the real (first) part of 
+                                the string
+imaginaryPart                 double value that represents the imaginary (second) part
+                                of the string
 out                           ComplexNumber that represents the inputted string
