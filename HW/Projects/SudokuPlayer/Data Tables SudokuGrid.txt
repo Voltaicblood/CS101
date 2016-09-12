@@ -1,0 +1,44 @@
+Data Tables - SudokuGrid
+
+                  Class SudokuGrid
+Variable or Constant          Purpose
+____________________          _________________________________________
+grid                          int 2 dimensional array used for sudoku grid
+initgrid                      matching 2D boolean grid, tracks inital values
+
+                  Method toString
+Variable or Constant          Purpose
+____________________          _________________________________________
+gridString                    String to represent sudoku grid
+rowCount                      int to track rows
+threeRowCount                 int to track sets of 3 rows
+columnCount                   int to track columns
+subSectionCount               int to track sets of 3 columns
+
+                  Method getAllowedValues
+Variable or Constant          Purpose
+____________________          _________________________________________
+allowedValues                 boolean array that tracks allowed numbers
+subsectionNumber              int to track subsection
+subsection                    int 2D array to represent subsection
+
+                  Method findSubsection
+Variable or Constant          Purpose
+____________________          _________________________________________
+columnSub                     int to track column subsections
+subSection                    int to track subsection
+
+                  Method checkSubsection
+Variable or Constant          Purpose
+____________________          _________________________________________
+subsectionArray               int 2D array to represent subsection
+row                           int to track row value
+column                        int to track column value
+
+                  Method fill3Array
+Variable or Constant          Purpose
+____________________          _________________________________________
+filledArray                   int 3x3 2D array to be filled
+
+
+

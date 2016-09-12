@@ -1,0 +1,49 @@
+Data Tables - SudokuPlayer
+
+                  Method main
+Variable or Constant          Purpose
+____________________          _________________________________________
+g                             SudokuGrid for the player
+
+                  Method setInitialValues
+Variable or Constant          Purpose
+____________________          _________________________________________
+in                            Scanner for input from user
+initialValuesLeft             int to track remaining initial values
+initialValueEntered           String to track values entered
+enteredValue                  Scanner to sort values entered
+row                           int to track row value entered
+column                        int to track column value entered
+value                         int to track value entered
+count                         int to track amount of while loops
+allowedValues                 boolean [] to track allowed values
+
+                  Method playSudoku
+Variable or Constant          Purpose
+____________________          _________________________________________
+inputString                   String for inputted values
+in                            Scanner for user input
+
+                  Method inputGuess
+Variable or Constant          Purpose
+____________________          _________________________________________
+in                            Scanner for user input
+guessedValueEntered           String for entered values
+enteredValue                  Scanner for seperating values entered                           
+row                           int to track row value entered
+column                        int to track column value entered
+value                         int to track value entered
+count                         int to track amount of while loops
+allowedValues                 boolean [] to track allowed values
+
+                  Method inputAllowedCell
+Variable or Constant          Purpose
+____________________          _________________________________________
+in                            Scanner for user input
+cellValueEntered              String for entered values
+enteredValue                  Scanner for seperating values entered                           
+row                           int to track row value entered
+column                        int to track column value entered
+count                         int to track amount of while loops
+allowedValues                 boolean [] to track allowed values
+allowedString                 String to represent allowed values
