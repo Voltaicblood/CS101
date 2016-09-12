@@ -21,7 +21,7 @@ initgrid                      matching 2D boolean grid, tracks inital values
 */
 
    private int [][] grid;
-   protected boolean [][] initGrid;
+   private boolean [][] initGrid;
    
    public SudokuGrid()
    {
@@ -128,12 +128,15 @@ public void addGuess(int row, int column, int value)
     grid at row,column -> value
 */
    
-   public void addGuess(int row, int column, int value)
+   public int addGuess(int row, int column, int value)
    {
       if (!initGrid [row][column])
       {
          grid [row][column] = value;
+         return 1;
       }
+      else
+        return -1;
    }
    
 /*
@@ -144,7 +147,7 @@ public boolean checkPuzzle()
     for i < 9, i++
 	  for k < 9, k++
 	    boolean [] check -> call getAllowedValues(i, k)
-		if !check at (grid at i,k)
+		if !check at (grid at i,k) - 1
 		  return false
   else
     return false
@@ -160,7 +163,7 @@ public boolean checkPuzzle()
             for(int k = 0; k < 9; i++)
             {
                boolean [] check = getAllowedValues(i, k);
-               if (!check[grid[i][k]])
+               if (!check[grid[i][k] - 1])
                   return false;
             }
          }

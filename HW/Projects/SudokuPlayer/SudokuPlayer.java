@@ -36,8 +36,8 @@ g                             SudokuGrid for the player
    {
       SudokuGrid g = new SudokuGrid();
       System.out.println("Please enter in the initial values. This can " +
-                          "be doneby entering\nin [row] [column] [value]." +
-                          " You must enter in 15 initial values.\nRow, column," +
+                          "be done by entering\nin [row] [column] [value]." +
+                          " When you are done, enter -1.\nRow, column," +
                           " and values must be between 1-9.");
       setInitialValues(g);
       playSudoku(g);
@@ -48,7 +48,7 @@ Algoritm
 
 public static void setInitialValues(SudokuGrid g)
   Scanner in -> new Scanner(System.in)
-  int initialValuesLeft -> 15
+  int initialValuesLeft -> 7
   while initialValuesLeft > 0
     print "Initial values left: " + initialValuesLeft
     String initialValueEntered -> in.nextLine().toString()
@@ -84,7 +84,7 @@ public static void setInitialValues(SudokuGrid g)
 Variable or Constant          Purpose
 ____________________          _________________________________________
 in                            Scanner for input from user
-initialValuesLeft             int to track remaining initial values
+SENTINEL                      constant int used for canceling while loop
 initialValueEntered           String to track values entered
 enteredValue                  Scanner to sort values entered
 row                           int to track row value entered
@@ -97,11 +97,11 @@ allowedValues                 boolean [] to track allowed values
    public static void setInitialValues(SudokuGrid g)
    {
       Scanner in = new Scanner(System.in);
-      int initialValuesLeft = 15;
-      while(initialValuesLeft > 0)
+      final String SENTINEL = "-1";
+      String initialValueEntered = "";
+      while(!initialValueEntered.contains(SENTINEL))
       {
-         System.out.println("Initial values left: " + initialValuesLeft);
-         String initialValueEntered = in.nextLine().toString();
+         initialValueEntered = in.nextLine().toString();
          Scanner enteredValue = new Scanner(initialValueEntered);
          int row = -1;
          int column = -1;
@@ -126,22 +126,16 @@ allowedValues                 boolean [] to track allowed values
          if (row > -1 && row < 9 && column > -1 && column < 9 && value > 0 && value < 10)
          {
             boolean [] allowedValues = g.getAllowedValues(row, column);
-            if (!g.initGrid[row][column])
+            if (allowedValues[value - 1])
             {
-               if (allowedValues[value - 1])
-               {
-                  g.addInitial(row, column, value);
-                  initialValuesLeft--;
-               }
-               else
-                  System.out.println("Value conflicts with other initial values.");
+               g.addInitial(row, column, value);
             }
             else
-               if (allowedValues[value - 1])
-               {
-                  g.addInitial(row, column, value);
-               }
+               System.out.println("Value conflicts with other initial values.");
+         
          }
+         else if (row == -2)
+            System.out.println("Exiting setup.");
          else
             System.out.println("Row, column, or value is not within 1-9");
          System.out.println(g.toString());
@@ -186,10 +180,10 @@ in                            Scanner for user input
       String inputString = "";
       while (!g.checkPuzzle())
       {
-         System.out.println("Enter 1 for " +
-                            "current puzzle state, enter 2 to guess\nat " +
-                            "at a value, enter 3 to see allowed values " +
-                            "for a cell.\nEnter reset to reset the puzzle.");
+         System.out.println("1: current puzzle state\n" +
+                            "2: guess at a value\n" +
+                            "3: see allowed values at cell\n" +
+                            "reset: reset the puzzlefor a cell.");
          Scanner in = new Scanner(System.in);                  
          inputString = in.next().toString();
          if (inputString.equals("1"))
@@ -289,12 +283,13 @@ allowedValues                 boolean [] to track allowed values
       if (row > -1 && row < 9 && column > -1 && column < 9 && value > 0 && value < 10)
       {
          boolean [] allowedValues = g.getAllowedValues(row, column);
-         if (!g.initGrid[row][column])
+         int response = g.addGuess(row, column, value);
+         if (response == -1)
          {
-            g.addGuess(row, column, value);
-         }
-         else
             System.out.println("You cannot replace initial values.");
+         }
+         else if (response == 1)
+            System.out.println("Guess added.");
       }
       else
          System.out.println("Row, column, or value is not within 1-9");
@@ -369,7 +364,7 @@ allowedString                 String to represent allowed values
       }
       if (row > -1 && row < 9 && column > -1 && column < 9)
       {
-         boolean [] allowedValues = g.getAllowedValues(column, row);
+         boolean [] allowedValues = g.getAllowedValues(row, column);
          String allowedString = "Allowed values: ";
          for(int i = 0; i < 9; i++)
          {

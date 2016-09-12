@@ -9,7 +9,7 @@ g                             SudokuGrid for the player
 Variable or Constant          Purpose
 ____________________          _________________________________________
 in                            Scanner for input from user
-initialValuesLeft             int to track remaining initial values
+SENTINEL                      constant int used for canceling while loop
 initialValueEntered           String to track values entered
 enteredValue                  Scanner to sort values entered
 row                           int to track row value entered
