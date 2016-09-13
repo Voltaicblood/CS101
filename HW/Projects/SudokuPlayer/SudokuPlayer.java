@@ -21,7 +21,7 @@ public static void main(String [] args)
   Sudokugrid g = new SudokuGrid()
   print "Please enter in the initial values. This can " +
         "be doneby entering\nin [row] [column] [value]." +
-        " You must enter in 15 initial values.\nRow, column," +
+        " WHen you are done, enter -1.\nRow, column," +
         " and values must be between 1-9.");
    call setInitialValues(g)
    call playSudoku(g)
@@ -48,10 +48,9 @@ Algoritm
 
 public static void setInitialValues(SudokuGrid g)
   Scanner in -> new Scanner(System.in)
-  int initialValuesLeft -> 7
-  while initialValuesLeft > 0
-    print "Initial values left: " + initialValuesLeft
-    String initialValueEntered -> in.nextLine().toString()
+  final String SENTINEL -> "-1";
+  String initialValueEntered -> ""
+    initialValueEntered -> in.nextLine().toString()
     Scanner enteredValue -> new Scanner(initialValueEntered)
     int row -> -1
     int column -> -1
@@ -67,15 +66,12 @@ public static void setInitialValues(SudokuGrid g)
           value -> enteredValue.nextInt()
     if row > -1 AND row < 9 AND column > -1 AND column < 9 AND value > 0 AND value < 10
       boolean [] allowedValues -> call g.getAllowedValues(row, column)
-      if !g.initGrid[row][column]
-        if allowedValues[value - 1]
-          call g.addInitial(row, column, value);
-          initialValuesLeft--
-        else
-          print "Value conflicts with other initial values."
+      if allowedValues[value - 1]
+        call g.addInitial(row, column, value);
       else
-        if allowedValues[value - 1]
-          call g.addInitial(row, column, value)
+        print "Value conflicts with other initial values."
+    else if row = -2
+	  print "Exiting setup."
     else
       print "Row, column, or value is not within 1-9"
       print call g.toString()
@@ -138,7 +134,7 @@ allowedValues                 boolean [] to track allowed values
             System.out.println("Exiting setup.");
          else
             System.out.println("Row, column, or value is not within 1-9");
-         System.out.println(g.toString());
+            System.out.println(g.toString());
       }
    }
    
@@ -149,15 +145,15 @@ public static void playSudoku(SudokuGrid g)
   print "You can now play the game."
   String inputString = "";
   while call g.checkPuzzle() = false
-    print "Enter 1 for " +
-          "current puzzle state, enter 2 to guess\nat " +
-          "at a value, enter 3 to see allowed values " +
-          "for a cell.\nEnter reset to reset the puzzle."
+    print "1: current puzzle state\n" +
+          "2: guess at a value\n" +
+          "3: see allowed values at cell\n" +
+          "reset: reset the puzzle for a cell."
     Scanner in -> new Scanner(System.in)
 	inputString -> in.next().toString()
 	if inputString equals 1
 	  print call g.toString
-	else if inputString euqls 2
+	else if inputString equals 2
 	  call inputGuess(g)
 	else if inputString equals 3
 	  call inputAllowedCell(g)
@@ -183,7 +179,7 @@ in                            Scanner for user input
          System.out.println("1: current puzzle state\n" +
                             "2: guess at a value\n" +
                             "3: see allowed values at cell\n" +
-                            "reset: reset the puzzlefor a cell.");
+                            "reset: reset the puzzle for a cell.");
          Scanner in = new Scanner(System.in);                  
          inputString = in.next().toString();
          if (inputString.equals("1"))
@@ -231,10 +227,11 @@ public static void inputGuess(SudokuGrid g)
         value -> enteredValue.nextInt()
     if row > -1 AND row < 9 AND column > -1 AND column < 9 AND value > 0 AND value < 10
       boolean [] allowedValues -> call g.getAllowedValues(row, column)
-      if !g.initGrid at row,column
-        call g.addGuess(row, column, value);
-      else
+	  int response -> call g.addGuess(row, column, value)
+      if response = -1
         print "You cannot replace initial values."
+      else if response = 1
+	    print "Guess added."
     else
       print "Row, column, or value is not within 1-9"
       
@@ -249,6 +246,7 @@ column                        int to track column value entered
 value                         int to track value entered
 count                         int to track amount of while loops
 allowedValues                 boolean [] to track allowed values
+response                      int that tracks response from addGuess
 */
    
    public static void inputGuess(SudokuGrid g)

@@ -30,16 +30,19 @@ public void addInitial(int row, int column, int value)
   grid at row,column -> value
   initGrid at row,column -> true
   
-public void addGuess(int row, int column, int value)
+public int addGuess(int row, int column, int value)
   if !initGrid at row,column
     grid at row,column -> value
+	return 1
+  else
+    return -1
   
 public boolean checkPuzzle()
   if (call isFull)
     for i < 9, i++
 	  for k < 9, k++
 	    boolean [] check -> call getAllowedValues(i, k)
-		if !check at (grid at i,k)
+		if !check at (grid at i,k) - 1
 		  return false
   else
     return false

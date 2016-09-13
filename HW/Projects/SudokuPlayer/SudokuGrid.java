@@ -123,9 +123,12 @@ public void addInitial(int row, int column, int value)
 /*
 Algorithm
 
-public void addGuess(int row, int column, int value)
+public int addGuess(int row, int column, int value)
   if !initGrid at row,column
     grid at row,column -> value
+	return 1
+  else
+    return -1
 */
    
    public int addGuess(int row, int column, int value)
