@@ -34,7 +34,6 @@ row                           int to track row value entered
 column                        int to track column value entered
 value                         int to track value entered
 count                         int to track amount of while loops
-allowedValues                 boolean [] to track allowed values
 response                      int that tracks response from addGuess
 
                   Method inputAllowedCell

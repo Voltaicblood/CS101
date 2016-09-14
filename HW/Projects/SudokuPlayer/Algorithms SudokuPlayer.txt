@@ -82,12 +82,14 @@ public static void inputGuess(SudokuGrid g)
       else if count = 3
         value -> enteredValue.nextInt()
     if row > -1 AND row < 9 AND column > -1 AND column < 9 AND value > 0 AND value < 10
-      boolean [] allowedValues -> call g.getAllowedValues(row, column)
 	  int response -> call g.addGuess(row, column, value)
       if response = -1
         print "You cannot replace initial values."
       else if response = 1
 	    print "Guess added."
+      else if response = 0
+	    print "Value conflicts with other values in " +
+		      "row, column, or subsection."
     else
       print "Row, column, or value is not within 1-9"
 	  

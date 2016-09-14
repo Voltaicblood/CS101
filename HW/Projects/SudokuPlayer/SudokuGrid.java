@@ -135,8 +135,14 @@ public int addGuess(int row, int column, int value)
    {
       if (!initGrid [row][column])
       {
+        boolean [] allowedValues = getAllowedValues(row, column);
+        if (allowedValues[value - 1])
+        {
          grid [row][column] = value;
          return 1;
+        }
+        else
+          return 0;
       }
       else
         return -1;

@@ -134,7 +134,7 @@ allowedValues                 boolean [] to track allowed values
             System.out.println("Exiting setup.");
          else
             System.out.println("Row, column, or value is not within 1-9");
-            System.out.println(g.toString());
+         System.out.println(g.toString());
       }
    }
    
@@ -226,7 +226,6 @@ public static void inputGuess(SudokuGrid g)
       else if count = 3
         value -> enteredValue.nextInt()
     if row > -1 AND row < 9 AND column > -1 AND column < 9 AND value > 0 AND value < 10
-      boolean [] allowedValues -> call g.getAllowedValues(row, column)
 	  int response -> call g.addGuess(row, column, value)
       if response = -1
         print "You cannot replace initial values."
@@ -245,7 +244,6 @@ row                           int to track row value entered
 column                        int to track column value entered
 value                         int to track value entered
 count                         int to track amount of while loops
-allowedValues                 boolean [] to track allowed values
 response                      int that tracks response from addGuess
 */
    
@@ -280,7 +278,6 @@ response                      int that tracks response from addGuess
       }
       if (row > -1 && row < 9 && column > -1 && column < 9 && value > 0 && value < 10)
       {
-         boolean [] allowedValues = g.getAllowedValues(row, column);
          int response = g.addGuess(row, column, value);
          if (response == -1)
          {
@@ -288,6 +285,9 @@ response                      int that tracks response from addGuess
          }
          else if (response == 1)
             System.out.println("Guess added.");
+         else if (response == 0)
+            System.out.println("Value conflicts with other values in " +
+                               "row, column, or subsection.");
       }
       else
          System.out.println("Row, column, or value is not within 1-9");

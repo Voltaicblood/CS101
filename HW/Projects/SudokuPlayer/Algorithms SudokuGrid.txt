@@ -32,8 +32,12 @@ public void addInitial(int row, int column, int value)
   
 public int addGuess(int row, int column, int value)
   if !initGrid at row,column
-    grid at row,column -> value
-	return 1
+    boolean [] allowedValues -> getAllowedValues(row, column)
+	if allowedValues at (value - 1)
+      grid at row,column -> value
+	  return 1
+	else
+	  return 0
   else
     return -1
   
