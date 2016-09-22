@@ -1,0 +1,8 @@
+Data Tables - Faculty
+
+                  Class Faculty
+Variable or Constant          Purpose
+____________________          _________________________________________
+officeHours                   String that store office hours
+pattern                       String to stores dollar pattern
+dollar                        DecimalFormat from pattern

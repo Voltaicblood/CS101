@@ -1,0 +1,13 @@
+Algorithms - Faculty
+
+public String toString()
+    return "Faculty" +
+           "\n\tname: " + name +
+           "\n\taddress: " + address +
+           "\n\tphoneNumber: " + phoneNumber +
+           "\n\te-mail address: " + emailAddress +
+           "\n\toffice: " + office +
+           "\n\tsalary: " + dollar.format(salary) +
+           "\n\thiring date: " + hireDate.toString() +
+           "\n\ttitle: " + title +
+           "\n\toffice hours: " + officeHours

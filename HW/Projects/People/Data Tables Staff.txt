@@ -1,0 +1,17 @@
+Data Tables - Staff
+
+                  Class Staff
+Variable or Constant          Purpose
+____________________          _________________________________________
+supervisorName                String to store supervisor's name
+pattern                       String to store dollar pattern
+dollar                        DecimalFormat based off of pattern
+
+                  Method sortStaffbyDate
+Variable or Constant          Purpose
+____________________          _________________________________________
+entered                       Entered array parameter
+input                         Copied person array from the entered array
+bottom                        Int to store the value the sort stops at
+sorted                        Boolean to see if the array is sorted
+staff                         Boolean to see if the array slot is a staff

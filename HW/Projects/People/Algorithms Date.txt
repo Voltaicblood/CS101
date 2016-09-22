@@ -1,0 +1,22 @@
+Algorithms - Date
+
+public String toString()
+    return month + "/" + day + "/" + year
+
+public int compareTo(Date input)
+    if year > input.year then
+      return -1
+    else if year < input.year then
+      return 1
+    else
+	if month > input.month then
+        return -1
+      else if month < input.month then
+        return 1
+      else
+        if day > input.day then
+          return -1
+        else if day < input.day then
+          return 1
+        else
+          return 0

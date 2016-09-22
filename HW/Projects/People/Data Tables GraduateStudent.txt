@@ -1,0 +1,16 @@
+Data Tables - GraduateStudent
+
+                  Class GraduateStudent
+Variable or Constant          Purpose
+____________________          _________________________________________
+assistType                    String to store assistantship type
+
+                  Method sortGraduatesByAddress
+Variable or Constant          Purpose
+____________________          _________________________________________
+entered                       Entered array parameter
+input                         Copied person array from the entered array
+bottom                        Int to store the value the sort stops at
+sorted                        Boolean to see if the array is sorted
+graduate                      Boolean to see if the array slot is a graduate
+

@@ -1,0 +1,36 @@
+Algorithms - Person
+
+  public static Person [] sortByName(Person [] entered)
+    Person [] input -> entered
+    int bottom -> input.length - 1
+    boolean sorted -> false
+    while !sorted
+      for int pass -> 0; pass < input.length - 1; pass++
+        for int i -> 0; i < bottom; i++
+          sorted -> true;
+          if input[i].name.compareToIgnoreCase(input[i + 1].name) > 0
+            Person temp -> input[i]
+            input[i] -> input[i +1]
+            input[i + 1] -> temp
+            sorted -> false
+        bottom--
+    return input
+  
+  public static String arrayToString(Person [] input, String type)
+    String arrayString -> ""
+    if type.compareTo("n") = 0
+      for int i -> 0; i < input.length; i++
+        arrayString += input[i].toString() + "\n\n"
+    else if type.compareTo("s") = 0
+      for int i -> 0; i < input.length; i++
+        if input[i].type.compareTo("s") = 0
+          arrayString += input[i].toString() + "\n\n"
+    else if type.compareTo("e") = 0
+      for int i -> 0; i < input.length; i++
+        if (input[i].type.compareTo("s") = 0 || input[i].type.compareTo("f") = 0)
+          arrayString += input[i].toString() + "\n\n"
+    else if type.compareTo("g") = 0
+      for int i -> 0; i < input.length; i++
+        if input[i].type.compareTo("g") = 0
+          arrayString += input[i].toString() + "\n\n"
+    return arrayString

@@ -1,0 +1,18 @@
+Data Tables - Date
+
+                  Class Employee
+Variable or Constant          Purpose
+____________________          _________________________________________
+office                        String to store office name
+salary                        Double to store salary
+hireDate                      Date to store hire date
+title                         String to store title
+
+                  Method sortEmployeesBySalary
+Variable or Constant          Purpose
+____________________          _________________________________________
+entered                       Entered array parameter
+input                         Copied person array from the entered array
+bottom                        Int to store the value the sort stops at
+sorted                        Boolean to see if the array is sorted
+staff                         Boolean to see if the array slot is an employee

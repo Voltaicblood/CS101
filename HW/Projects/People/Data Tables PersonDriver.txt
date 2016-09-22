@@ -1,0 +1,33 @@
+Data Tables - PersonDriver
+
+                  Class PersonDriver
+Variable or Constant          Purpose
+____________________          _________________________________________
+length                        Length of the Person array
+
+                  Method main
+Variable or Constant          Purpose
+____________________          _________________________________________
+inputFileName                 String of the input file
+outputFileName                String of the output file
+inputFile                     File of the input file
+outputFile                    File of the output file
+input                         Scanner of the input file
+echo                          String of the input file
+out                           Printstream of the output file
+inputArray                    String array built from input file
+personArray                   Person array built from String array
+
+                  Method createInputArray
+Variable or Constant          Purpose
+____________________          _________________________________________
+input                         Scanner for the file input
+inputArray                    Array built from file input
+
+                  Method createPersonArray
+Variable or Constant          Purpose
+____________________          _________________________________________
+input                         String array from file input
+personArray                   Array built from string array
+poundBreak                    String for pound delimiter
+reader                        Scanner that reads string array

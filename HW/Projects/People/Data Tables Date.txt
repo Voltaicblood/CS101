@@ -1,0 +1,8 @@
+Data Tables - Date
+
+                  Class Date
+Variable or Constant          Purpose
+____________________          _________________________________________
+day                           int that stores the day
+month                         int that stores the month
+year                          int that stores the year

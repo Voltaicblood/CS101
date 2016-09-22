@@ -1,0 +1,25 @@
+Data Tables - Date
+
+                  Class Person
+Variable or Constant          Purpose
+____________________          _________________________________________
+type                          String to store type of person
+name                          String to store name of person
+address                       String to store address
+phoneNumber                   String to store phone number
+emailAddress                  String to store email address
+
+                  Method sortByName
+Variable or Constant          Purpose
+____________________          _________________________________________
+entered                       Entered array parameter
+input                         Copied person array from the entered array
+bottom                        Int to store the value the sort stops at
+sorted                        Boolean to see if the array is sorted
+
+                  Method arrayToString
+Variable or Constant          Purpose
+____________________          _________________________________________
+input                         The inputted Person array
+type                          Type of persons to access
+arrayString                   String that is created and returned

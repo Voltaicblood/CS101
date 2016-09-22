@@ -1,0 +1,36 @@
+Algorithms - Staff
+
+public String toString()
+      return "Staff" +
+           "\n\tname: " + name +
+           "\n\taddress: " + address +
+           "\n\ttitle: " + title +
+           "\n\tphoneNumber: " + phoneNumber +
+           "\n\te-mail address: " + emailAddress +
+           "\n\toffice: " + office +
+           "\n\tsalary: " + dollar.format(salary) +
+           "\n\thiring date: " + hireDate.toString() +
+           "\n\tsupervisor name: " + supervisorName
+
+public static Person [] sortStaffByDate(Person [] entered)
+      Person [] input -> entered
+      int bottom -> input.length - 1
+      boolean sorted -> false
+      boolean staff -> false
+      while !sorted
+         for int pass -> 0; pass < input.length - 1; pass++
+            for int i -> 0; i < bottom; i++
+               if input[i].type.compareTo("s") = 0
+                  staff -> false
+                  for int k -> 1; staff != true OR k > 100; k++
+                     if input[i + k].type.compareTo("s") = 0
+                        sorted -> true
+                        staff -> true
+                        if ((Staff)input[i]).hireDate.compareTo(((Staff)input[i + k]).hireDate) > 0
+                           Person temp -> input[i]
+                           input[i] -> input[i + k]
+                           input[i + k] -> temp
+                           sorted -> false
+            bottom--
+        sorted -> true
+      return input
